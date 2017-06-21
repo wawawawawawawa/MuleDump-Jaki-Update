@@ -3,7 +3,7 @@ body {
     color: #b3b3b3;
     padding: 10px;
     margin: 0;
-    font-size: 1rem;
+    font-size: 11px;
     line-height: 1.2;
     cursor: default;
     font-family: Arial, sans-serif;
@@ -463,21 +463,26 @@ td.cont>div {
     color: #eaa;
 }
 .jscolor {
-    background-color: #4CAF50; /* Green */
-    border: 0  3px;
-    color: white;
-    padding: 15px 32px;
+    background-color: #363636 !important;
+	padding: 15px 32px;
     text-align: center;
     text-decoration: none;
+	color:#b3b3b3 !important;
     display: inline-block;
-    font-size: 16px;
-	border-radius: 8px;
+    font-size: 15px;
 	width: 200px;
+	padding: 5px;
+	border: solid 0px #555;
+	text-align: left;
+}
+   .jscolor:hover {
+	background: #555 !important;
+    color: #fff !important;
 }
 .button {
-	background-color: #4CAF50; /* Green */
+	background-color: #555;
     border: 0  3px;
-    color: white;
+    color: #b3b3b3;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -485,16 +490,22 @@ td.cont>div {
 	border-radius: 8px;
 }	
 .button1 {
-	background-color: #555; /* Green */
-    border: 0  3px;
-    color: white;
+	background-color: #363636 !important;
+	padding: 15px 32px;
     text-align: center;
     text-decoration: none;
+	color:#b3b3b3 !important;
     display: inline-block;
-    font-size: 16px;
-	border-radius: 8px;
+    font-size: 15px;
 	width: 200px;
-}	
+	padding: 5px;
+	border: solid 0px #555;
+	text-align: left;
+}
+.button1:hover {
+	background: #555 !important;
+    color: #fff !important;
+}
 h7 {
 	color: white;
 }

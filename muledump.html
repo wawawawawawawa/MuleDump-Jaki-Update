@@ -3,6 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muledump</title>
 
@@ -22,15 +23,15 @@
                 <span id="background" class="menu">
 					<!-- Menu item for background color -->
 					<input name="background_color" type="hidden" id="background_color" value="555">
-					<button  class="jscolor {valueElement: 'background_color',closable:true,closeText:'Close'}">Background Color</button>
+					<button  class="jscolor {valueElement: 'background_color',closable:true,closeText:'Close'}">background color</button>
 					<!-- Menu item for text color -->
 					<input name="text_color" type="hidden" id="text_color" value="555">
-					<button class="jscolor {valueElement: 'text_color',closable:true,closeText:'Close'}">Text Color</button>
+					<button class="jscolor {valueElement: 'text_color',closable:true,closeText:'Close'}">text color</button>
 					<!-- Menu item for background image -->
 					<h7>Choose a Background Image</h7>
 					<input type="file" id="background_image" placeholder="Background Image"/>
                     <!-- Menu item for background image -->
-					<button class="button1"onClick="refreshPage()" id="reset_button">Reset
+					<button class="button1"onClick="refreshPage()" id="reset_button">reset</button>
 				</span>
             </div>
             <div id="cnt" style="display: none;">waiting requests: <span id="counter"></span></div>
@@ -62,8 +63,8 @@
     <script type="application/javascript" src="lib/prices.js"></script>
     <script type="text/javascript" src="lib/backgroundChanger.js"></script>
     <script type="text/javascript" src="vendor/jscolor.min.js"></script>
-
 	<script> function refreshPage(){window.location.reload();} </script>
+	<script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
 </body>
 
 </html>
