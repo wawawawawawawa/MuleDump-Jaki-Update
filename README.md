@@ -6,7 +6,7 @@ The point of playing the game is to have fun. Muling is not fun. I am trying to 
 
 ## Download
 
-All released versions are [here](https://github.com/atomizer/muledump/releases).
+All olders versions from Atomizer are [here](https://github.com/atomizer/muledump/releases).
 
 ## Howto
 
