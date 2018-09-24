@@ -26,9 +26,15 @@ All olders versions from Atomizer are [here](https://github.com/atomizer/muledum
 
 And of course, feel free to contribute to it!
 
+## Special Thanks
+
+Atomizer for the first ever version of Muledump!! (https://github.com/Atomizer)
+Jakcodex for all the code I took from him (good features there!) (https://github.com/jakcodex)
+Tuvior for his automated renders/constants that I don't have to manually do anymore! (https://github.com/tuvior)
+
 ## License
 
-Copyright (c) 2013 [atomizer](https://github.com/atomizer)
+Copyright (c) 2018 [Wawawa](https://github.com/wawawawawawawa)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
