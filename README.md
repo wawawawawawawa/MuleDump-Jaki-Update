@@ -29,7 +29,9 @@ And of course, feel free to contribute to it!
 ## Special Thanks
 
 Atomizer for the first ever version of Muledump!! (https://github.com/Atomizer)
+
 Jakcodex for all the code I took from him (good features there!) (https://github.com/jakcodex)
+
 Tuvior for his automated renders/constants that I don't have to manually do anymore! (https://github.com/tuvior)
 
 ## License
