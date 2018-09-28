@@ -18,7 +18,7 @@ body {
 }
 
 #top {
-	font-size: 15px;
+	font-size:1.3em;
 	margin: 0 3px;
 	text-align: right;
 }
@@ -43,7 +43,7 @@ body {
 	width: 200px;
 	text-align: left;
 	font-weight: normal;
-	font-size: 15px;
+	font-size:1.3em;
 }
 .menu:hover { display: block; }
 .handle { position: relative; }
@@ -72,7 +72,7 @@ body {
 	margin: 10px 3px;
 	border: solid 2px #555;
 	line-height: 0;
-	max-width: 528px;
+	/* max-width: 528px;  change it back if you prefer the total items not taking full screen width */
 	padding: 5px;
 }
 
@@ -85,6 +85,210 @@ body {
 
 #errors:empty { display: none; }
 
+.flex-container {
+    display: flex;
+}
+
+.flex-container:not(.noFlexAutoWidth) {
+    width: 100%;
+}
+
+.flex-container:not(.noFlexAutoAlign) {
+    align-items: center;
+}
+
+.flex-container:not(.noFlexAutoJustify) {
+    justify-content: center;
+}
+
+img.boost {
+	background: url(boost.png) #2c2c2c;	
+    width: 11px;
+    height: 14px;
+    margin-right: 5px;
+    overflow: hidden;
+    z-index: 450;
+}
+
+img.hidden {
+    display: none;
+}
+
+div.tooltip div.bagType {
+    background: url(bagTypes.png) #2c2c2c;
+    overflow: hidden;
+    width: 26px;
+    height: 26px;
+	margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+div.ClassType {
+    background: url(ClassicSkins.png) #2c2c2c;
+    overflow: hidden;
+    width: 82px;
+    height: 82px;
+    margin-right: 5px;
+}
+
+div.WawaType {
+	margin-bottom: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+/* generic positioning */
+.fleft {
+    float: left !important;
+}
+
+.fright {
+    float: right !important;
+}
+
+.cfleft {
+    float: left;
+    clear: left;
+}
+
+.cfright {
+    float: right;
+    clear: right;
+}
+
+.cboth {
+    clear: both;
+}
+
+.nomargin {
+    margin: 0 !important;
+}
+
+.textCenter {
+    text-align: center;
+}
+/* other */
+.mt5 {
+	margin-top: 5px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.mr5 {
+    margin-right: 5px;
+}
+
+.ml5 {
+	margin-left: 5px;
+}
+
+.pr5 {
+	padding-right: 5px;
+}
+
+.pt5 {
+	padding-top: 5px;
+}
+
+.pb5 {
+	padding-bottom: 5px;
+}
+
+.pl5 {
+	padding-left: 5px;
+}
+
+.petItem {
+    flex-grow: 1;
+	min-width: 40px;
+    height: 40px;
+	background: url(renders.png) #545454;
+	margin: 2px;
+}
+
+.statItem {
+    flex-grow: 1;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.statContainer {
+    display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.selected:not(.item) {
+    background-color: #040f51 !important;
+    color: #22b7da !important;
+}
+
+.enabled.item.cloth.selector {
+    border: #00eaff solid 1px !important;
+}
+
+.tooltip-textiles {
+    height: auto !important;
+    padding: 5px;
+}
+
+.tooltip-boost {
+    height: auto !important;
+    width: 175px;
+    padding: 5px;
+}
+
+div.tooltip:not(.autoHeight) {
+    height: 36px;
+}
+
+div.tooltip {
+    z-index: 500;
+    position: absolute;
+    border: #22b7da solid 2px;
+    color: #ffffff;
+    text-align: left;
+    background-color: #2c2c2c;
+}
+
+div.tooltip > div:not(.ignore) {
+    padding: 4px;
+}
+
+span.tooltip.ut {
+    color: #8a2be2;
+    font-weight: bold;
+}
+
+span.tooltip.st {
+    color: #ff9900;
+    font-weight: bold;
+}
+
+span.tooltip.tiered {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+span.tooltip.feed {
+    color: #fc8642;
+}
+
+span.tooltip.generic.text {
+    color: #b3b3b3;
+}
+
+span.tooltip.famebonus.value {
+    color: #ffff8f;
+}
+
 .mule {
 	padding: 2px;
 	margin: 3px;
@@ -95,15 +299,15 @@ body {
 .guid {
 	color: #ccc;
 	background: #303030;
-	border: solid 1px #888;
+	border: solid #888;
 	font-family: monospace;
-	width: 100%;
+	width: 99.6%;
 }
 
 .name, .error, .reload, #counter { font-weight: bold; }
 
 .name {
-	font-size: 16px;
+	font-size: 1.4em;
 	margin: 4px;
 	text-align: center;
 	cursor: pointer;
@@ -118,7 +322,7 @@ body {
 	line-height: 18px;
 	vertical-align: middle;
 	text-align: center;
-	font-size: 16px;
+	font-size: 1.4em;
 	color: white;
 	background-color: #545454;
 	cursor: pointer;
@@ -128,10 +332,9 @@ body {
 }
 
 .portrait {
-	float: left;
 	width: 28px;
 	height: 28px;
-	margin: 2px 4px 0 4px;
+	margin: 2px 5px 2px 2px; /*top right bottom left*/
 }
 
 hr {
@@ -143,7 +346,6 @@ hr {
 
 .stats, .pcstats, .chdesc {
 	width: 180px;
-	margin: 4px 0;
 }
 
 .chdesc {
@@ -155,10 +357,29 @@ hr {
 	padding: 0;
 }
 
+.select {
+    -webkit-touch-callout: initial !important;
+    -webkit-user-select: initial !important;
+    -khtml-user-select: initial !important;
+    -moz-user-select: initial !important;
+    -ms-user-select: initial !important;
+    user-select: initial !important;
+}
+
+.noselect:not(.select)
+
 .stats td.sname {
 	text-align: right;
 	padding: 0 5px 0 0;
 }
+
+.avg { /*color: #73cce2;*/ }
+.max { color: #f0f0a0; }
+.maxed { color: #fcdf00; }
+.good { color: #90ff90; }
+.good.very { color: #00ff00; }
+.bad { color: #ff9090; }
+.bad.very { color: #ff0000; }
 
 .stat.avg { /*color: #73cce2;*/ }
 .stat.max { color: #f0f0a0; }
@@ -167,7 +388,7 @@ hr {
 .stat.good.very { color: #00ff00; }
 .stat.bad { color: #ff9090; }
 .stat.bad.very { color: #ff0000; }
-.stat.small { font-size: 11px; }
+.stat.small { font-size: 1em; }
 
 .items {
 	line-height: 0;
@@ -184,7 +405,9 @@ hr {
 	position: relative;
 	width: 40px;
 	height: 40px;
-	margin: 2px;
+	margin-right: 4px;
+	margin-bottom: 2px;
+	margin-top: 2px;
 	background: url(renders.png) #545454;
 	overflow: hidden;
 }
@@ -213,37 +436,49 @@ hr {
 	color: white;
 }
 
+.gifts .item {
+    background-color: #daa520;
+}
+
+.itemsc.gifts .item.selected {
+    outline: 2px solid #ffffff !important;
+    background-color: #f6ff50;
+}
+
 /*hp and mp */
 .hp{
 	background-color: #545454;
 	background-image: url(hp.png);
-	background-position: 22px 2px;
+	background-position: 22px 0px;
 	background-repeat: no-repeat;
 	color: white;
-	float: left;
 	font: bold 15px/20px Arial, sans-serif;
 	height: 20px;
-	margin: 0 2px 4px 4px;
-	padding: 2px 2px 2px 17px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-left: 19px;
+	padding-top: 1px;
 	text-align: center;
 	text-shadow: -1px 0px 1px black, 1px 0px 1px black, 0px -1px 1px black, 0px 1px 1px black;
-	width: 65px;
+	width: 64px;
+	/* border: dotted blue; */
 }
 
 .mp{
 	background-color: #545454;
 	background-image: url(mp.png);
-	background-position: 22px 2px;
+	background-position: 22px 0px;
 	background-repeat: no-repeat;
 	color: white;
-	float: right;
 	font: bold 15px/20px Arial, sans-serif;
 	height: 20px;
-	margin: 0 4px 4px 2px;
-	padding: 2px 2px 2px 17px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-left: 19px;
+	padding-top: 1px;
 	text-align: center;
 	text-shadow: -1px 0px 1px black, 1px 0px 1px black, 0px -1px 1px black, 0px 1px 1px black;
-	width: 65px;
+	width: 64px;
 }
 
 /* achievements etc */
@@ -314,7 +549,7 @@ td.cont > div {
 	float: left;
 	padding: 1px 1px 1px 4px;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 1.2em;
 	margin: 4px 2px;
 }
 .scont .star {

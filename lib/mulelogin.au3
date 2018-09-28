@@ -1,9 +1,15 @@
+; Remove the ; from the next line if you get script errors
+; Or you can add a ; to disable it (i.e: ;#RequireAdmin)
+#RequireAdmin
+
 #include <String.au3>
 #include <File.au3>
 #include <Array.au3>
 
 Global $string, $password, $email, $data, $path, $search, $file, $root
 $root = "HKEY_CLASSES_ROOT\muledump"
+$title = "Muledump One Click Login Installer"
+$adminRightsError = "Error - Requires Admin Privileges" & @CRLF & @CRLF & "Edit mulelogin.au3 in a text editor to enable admin rights at the top" & @CRLF & @CRLF & "For more help see:" & @CRLF & "https://github.com/jakcodex/muledump/wiki/One-Click-Login"
 
 Func _write()
 	RegWrite($root,"","REG_SZ","URL: muledump Protocol")
@@ -12,9 +18,9 @@ Func _write()
 	RegWrite($root & "\shell\open")
 	RegWrite($root & "\shell\open\command","","REG_SZ", @AutoItExe & ' "' & @ScriptFullPath & '" %1')
 	If RegRead("HKEY_CLASSES_ROOT\muledump","") Then
-		MsgBox(64,"mulelogin","muledump: URL handler installed")
+		MsgBox(64,$title,"One Click Login: installed" & @CRLF & @CRLF & "You should open mulelogin.au3 in a text editor and disable:" & @CRLF & "#RequireAdmin")
 	Else
-		MsgBox(16,"mulelogin","Unable to write to registry" & @CRLF & "Try again with admin rights")
+		MsgBox(16,$title,$adminRightsError)
 	EndIf
 	Exit
 EndFunc
@@ -23,12 +29,12 @@ Func _install()
 	Local $k
 	$k = RegEnumKey($root, 1)
 	If @error == 2 Then
-		MsgBox(16,"mulelogin","Unable to open the registry" & @CRLF & "Try again with admin rights" & @CRLF & "or open this file through AutoIt directly")
+		MsgBox(16,$title,$adminRightsError)
 		Exit
 	EndIf
 	If @error == 1 Then _write()
-	$k = MsgBox(6 + 32, 'mulelogin', _
-		'URL handler is already installed. Uninstall?' & @CRLF & @CRLF & _
+	$k = MsgBox(6 + 32, $title, _
+		'One Click Login is already installed. What would you like to do?' & @CRLF & @CRLF & _
 		'"Cancel" to do nothing' & @CRLF & _
 		'"Try Again" to reinstall' & @CRLF & _
 		'"Continue" to uninstall')
@@ -36,9 +42,9 @@ Func _install()
 	If $k == 11 Then
 		RegDelete($root)
 		if @error <> 0 Then
-			MsgBox(16,"mulelogin","Unable to delete the key" & @CRLF & "Try again with admin rights")
+			MsgBox(16,$title,$adminRightsError)
 		Else
-			MsgBox(64,"mulelogin","muledump: URL handler uninstalled")
+			MsgBox(64,$title,"One Click Login: uninstalled")
 		EndIf
 	EndIf
 	Exit
@@ -111,6 +117,7 @@ Local $paths[3] = [ _
 	"realmofthemadgodhrd.appspot.com", _
 	"www.realmofthemadgod.com" _
 ]
+; $test = d.Account.Name
 For $path_base In $paths_base
 	$search = FileFindFirstFile($path_base & "*")
 	$searchPath = FileFindNextFile($search)
@@ -123,9 +130,27 @@ For $path_base In $paths_base
 Next
 FileClose($search)
 
-ShellExecute("http://www.realmofthemadgod.com/")
-; replace the line above if you're using a projector
-; for example, with totalcmd + swfview
+;;
+; launch one-click login
+;;
+
+; run one-click login through the browser
+; ShellExecute("https://www.realmofthemadgod.com/")
+
+;;
+; replace the line above with one of the following if you're using a projector
+;;
+
+; run one-click login through flash projector
+; update the path to your flash projector exe
+; https://www.adobe.com/support/flashplayer/debug_downloads.html
+ShellExecute('D:\Desktop\RB5\flashplayer_25_sa.exe', 'https://www.realmofthemadgod.com/client')
+Sleep (1000)
+if ($email = "62656e6a616d696e2e626163726940676d61696c2e636f6d") Then WinSetTitle ( "[active]", "", "Realm of the Mad God - Wawawa" )
+if ($email = "6c6f6c6e6f6f627a6f7240686f746d61696c2e636f6d") Then WinSetTitle ( "[active]", "", "Realm of the Mad God - Oyoyo" )
+; WinSetTitle ( "[active]", "", "[$data]" )
+; MsgBox ( $MB_CANCELTRYCONTINUE, $email, $email)
+
+; run one-click login through totalcmd + swfview
+; https://www.ghisler.com/
 ;ShellExecute('C:\Program Files\Total Commander\Totalcmd.exe', '/S=L:Pswfview e:\temp\rotmg\loader.swf')
-; or to open the latest swf with the Adobe Flash Projector
-;ShellExecute('C:\flashplayer_16_sa.exe', 'https://realmofthemadgodhrd.appspot.com/AssembleeGameClient'&BinaryToString(InetRead("http://www.realmofthemadgod.com/version.txt"))&'.swf')
