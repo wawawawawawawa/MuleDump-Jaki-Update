@@ -72,7 +72,6 @@ body {
 	margin: 10px 3px;
 	border: solid 2px #555;
 	line-height: 0;
-	/* max-width: 528px;  change it back if you prefer the total items not taking full screen width */
 	padding: 5px;
 }
 
@@ -80,7 +79,6 @@ body {
 	color: pink;
 	display: inline-block;
 	font: 16px/28px sans-serif;
-	max-width: 600px;
 }
 
 #errors:empty { display: none; }
@@ -102,9 +100,19 @@ body {
 }
 
 img.boost {
-	background: url(boost.png) #2c2c2c;	
-    width: 11px;
-    height: 14px;
+    background: url(boost.png) #2c2c2c;	
+    background-size: cover;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    overflow: hidden;
+    z-index: 450;
+}
+
+img.pet {
+    background-size: cover;
+    width: 15px;
+    height: 15px;
     margin-right: 5px;
     overflow: hidden;
     z-index: 450;
@@ -119,7 +127,7 @@ div.tooltip div.bagType {
     overflow: hidden;
     width: 26px;
     height: 26px;
-	margin-bottom: 5px;
+    margin-bottom: 5px;
     margin-top: 5px;
 }
 
@@ -132,7 +140,7 @@ div.ClassType {
 }
 
 div.WawaType {
-	margin-bottom: 2px;
+    margin-bottom: 2px;
     margin-top: 2px;
     margin-left: 2px;
 }
@@ -461,7 +469,6 @@ hr {
 	text-align: center;
 	text-shadow: -1px 0px 1px black, 1px 0px 1px black, 0px -1px 1px black, 0px 1px 1px black;
 	width: 64px;
-	/* border: dotted blue; */
 }
 
 .mp{
