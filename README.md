@@ -1,3 +1,11 @@
+UPDATE : Yahoo API got shutdown, so now this won't work anymore.
+
+Instead, I am now using ![Jaki MD](https://github.com/jakcodex) instead as a base, and I will tweak it from there.
+
+My new updates will be on ![this repository](https://github.com/wawawawawawawa/Jaki-Muledump-Wawa-Update)
+
+
+
 ## Synopsis
 
 This tool allows you to list contents of all your accounts in a single page (characters, their stats and items, items in vaults). Also it generates a summary of all the items - you probably saw screenshots of these in trading forum ([example](http://i755.photobucket.com/albums/xx195/Ind3sisiv3/Ilovemuledump.png)).
